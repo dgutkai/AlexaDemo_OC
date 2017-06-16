@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APIKey</key>
+	<string>eyJhbGciOiJSU0EtU0hBMjU2IiwidmVyIjoiMSJ9.eyJ2ZXIiOiIzIiwiZW5kcG9pbnRzIjp7ImF1dGh6IjoiaHR0cHM6Ly93d3cuYW1hem9uLmNvbS9hcC9vYSIsInRva2VuRXhjaGFuZ2UiOiJodHRwczovL2FwaS5hbWF6b24uY29tL2F1dGgvbzIvdG9rZW4ifSwiY2xpZW50SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1vYTItY2xpZW50LjJhOWM3YTk5NTdkYzRkN2U4N2RmYjBlMmM0ZTBhYjI1IiwiYXBwRmFtaWx5SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi41ZGVkZjhlNGM0OGQ0MjVlYjZlYjE2ZTEyZTFkOTIxZSIsImJ1bmRsZVNlZWRJZCI6ImJpc2hlbmcuQWxleGFpT1NBcHAiLCJidW5kbGVJZCI6ImJpc2hlbmcuQWxleGFpT1NBcHAiLCJpc3MiOiJBbWF6b24iLCJ0eXBlIjoiQVBJS2V5IiwiYXBwVmFyaWFudElkIjoiYW16bjEuYXBwbGljYXRpb24tY2xpZW50LmRlNWI1ZThhNjRhOTRkZjRhYzJiODNkNmE2NjJiMDQxIiwidHJ1c3RQb29sIjpudWxsLCJhcHBJZCI6ImFtem4xLmFwcGxpY2F0aW9uLWNsaWVudC5kZTViNWU4YTY0YTk0ZGY0YWMyYjgzZDZhNjYyYjA0MSIsImlkIjoiODZlZTlkNjktNGY0Mi0xMWU3LWJjNzYtNmY3NzIzNGRhYjVlIiwiaWF0IjoiMTQ5NzI1MzI4MDg1NiJ9.oJS5JdTzCF8vW2+QwK4CNSoPViljyU6q0oUTR47ldW6N0/L5nV+5yKBx8Mvv32IUDARI0hxj3q5JjmumUI9qV8h4ikWQJ6Xx2sMhTXMRKrJRggelLSxxzHyTymaZeq+4V8YH6KXnAugYDgbZpTBWQKikVgRl2+RSojoVY50pZ5ILJPpmq8H2zAXXXs7l1TNb9k14cKJMUCbvFsiCM2a7mz8Mx0J8BqEcuDM1GrGpkr8KYODI81hMri2mgMD3au1rxktAcOANlmnhbywEgEGOR0BuCJB8B5HvL2fiWekKrj3E6OaS3TYGsSwxxm72CRwck0wIpPpZRrA1VpSd9mwwqA==</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>bisheng.AlexaiOSApp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>amzn-bisheng.AlexaiOSApp</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
