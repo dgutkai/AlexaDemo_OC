@@ -1,7 +1,7 @@
 //
 //  AlexaViewController.h
 //  AlexaTest_OC
-//
+//  Alexa操作Controller，这里点击Talk即可讲话，自动断句。
 //  Created by lanmi on 2017/6/13.
 //  Copyright © 2017年 lanmi. All rights reserved.
 //
