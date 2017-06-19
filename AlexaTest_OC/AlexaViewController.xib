@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlexaViewController">
             <connections>
                 <outlet property="infoLabel" destination="KWm-mT-YhN" id="2Ps-KI-lOc"/>
+                <outlet property="progress" destination="B6j-DE-Rqn" id="nOv-k8-SAg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voiceViewImg" destination="uLU-re-QSK" id="QqC-AO-DsU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -54,6 +56,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="record_animate_01" translatesAutoresizingMaskIntoConstraints="NO" id="uLU-re-QSK">
+                    <rect key="frame" x="80" y="289" width="37" height="55"/>
+                </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="B6j-DE-Rqn">
+                    <rect key="frame" x="89" y="307" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -61,13 +69,20 @@
                 <constraint firstItem="mMY-UZ-qiW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="82" id="6FK-EY-gnz"/>
                 <constraint firstItem="mMY-UZ-qiW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="63" id="Ah2-9Z-Hg4"/>
                 <constraint firstItem="PAT-5S-YZR" firstAttribute="centerX" secondItem="qaT-nN-7WJ" secondAttribute="centerX" id="BXU-BT-zJ1"/>
+                <constraint firstItem="uLU-re-QSK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="GtX-bK-ovh"/>
                 <constraint firstItem="KWm-mT-YhN" firstAttribute="top" secondItem="PAT-5S-YZR" secondAttribute="bottom" constant="27" id="Iel-aj-Zdv"/>
                 <constraint firstItem="cgw-Ek-INN" firstAttribute="centerX" secondItem="mMY-UZ-qiW" secondAttribute="centerX" id="QzO-1M-sXc"/>
                 <constraint firstItem="KWm-mT-YhN" firstAttribute="centerX" secondItem="PAT-5S-YZR" secondAttribute="centerX" id="bsj-85-HZE"/>
                 <constraint firstItem="cgw-Ek-INN" firstAttribute="top" secondItem="mMY-UZ-qiW" secondAttribute="bottom" constant="10" id="byl-34-9lb"/>
+                <constraint firstItem="uLU-re-QSK" firstAttribute="top" secondItem="KWm-mT-YhN" secondAttribute="bottom" constant="28" id="iBy-Op-WIf"/>
+                <constraint firstItem="B6j-DE-Rqn" firstAttribute="centerY" secondItem="uLU-re-QSK" secondAttribute="centerY" id="jgO-qC-mb3"/>
                 <constraint firstItem="qaT-nN-7WJ" firstAttribute="centerX" secondItem="cgw-Ek-INN" secondAttribute="centerX" id="nMV-GO-fdY"/>
+                <constraint firstItem="B6j-DE-Rqn" firstAttribute="centerX" secondItem="uLU-re-QSK" secondAttribute="centerX" id="sMP-G2-jXs"/>
                 <constraint firstItem="qaT-nN-7WJ" firstAttribute="top" secondItem="cgw-Ek-INN" secondAttribute="bottom" constant="10" id="wG1-Pk-73O"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="record_animate_01" width="37" height="55"/>
+    </resources>
 </document>

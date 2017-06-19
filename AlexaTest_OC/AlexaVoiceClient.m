@@ -153,6 +153,7 @@
 //    NSLog(@"bodyData = %@", bodyData);
     [[session uploadTaskWithRequest:request fromData:bodyData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error){
+            self.directiveHandler(nil);
             NSLog(@"Send audio error: %@", error.localizedDescription);
         }else{
             NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
@@ -164,6 +165,7 @@
                     NSArray *directives = [self extractDirectivesWithData:data Boundary:boundary];
                     self.directiveHandler(directives);
                 }else{
+                    self.directiveHandler(nil);
                     NSLog(@"Content type in response is empty");
                 }
             }
