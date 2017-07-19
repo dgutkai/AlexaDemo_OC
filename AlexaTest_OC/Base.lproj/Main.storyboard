@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,35 +24,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtR-eW-jai">
-                                <rect key="frame" x="116" y="120" width="31" height="30"/>
+                                <rect key="frame" x="26" y="600" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.70980392160000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="登陆"/>
                                 <connections>
                                     <action selector="loginAmazon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAN-8c-q3g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-B5-riT">
+                                <rect key="frame" x="166" y="638" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3W-ru-BeW">
-                                <rect key="frame" x="116" y="158" width="31" height="30"/>
+                                <rect key="frame" x="199" y="600" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.48621431623035094" blue="0.47198649231780887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="登出"/>
                                 <connections>
                                     <action selector="logoutAmazon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sXj-t6-0Yf"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ztJ-w6-N5z">
+                                <rect key="frame" x="-0.5" y="30" width="375" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Kzj-m2-TIc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hDM-d0-y6c"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AtR-eW-jai" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="CPR-Xv-hVT"/>
-                            <constraint firstItem="Q3W-ru-BeW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="GQU-3B-6mT"/>
-                            <constraint firstItem="AtR-eW-jai" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="PVH-X2-fsf"/>
-                            <constraint firstItem="Q3W-ru-BeW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="jrb-0C-o08"/>
+                            <constraint firstItem="ztJ-w6-N5z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="185-dI-4n8"/>
+                            <constraint firstItem="ztJ-w6-N5z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="8NO-vY-iUM"/>
+                            <constraint firstItem="ZAH-B5-riT" firstAttribute="top" secondItem="AtR-eW-jai" secondAttribute="bottom" constant="8" id="GYY-6j-erW"/>
+                            <constraint firstItem="AtR-eW-jai" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2.5" id="HjD-og-Osr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZAH-B5-riT" secondAttribute="bottom" constant="8" id="JbR-5L-UQW"/>
+                            <constraint firstItem="ZAH-B5-riT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kih-RK-zc5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q3W-ru-BeW" secondAttribute="trailing" constant="10" id="MMf-z3-wcw"/>
+                            <constraint firstItem="Q3W-ru-BeW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2.5" id="bga-qm-1QB"/>
+                            <constraint firstItem="Q3W-ru-BeW" firstAttribute="top" secondItem="AtR-eW-jai" secondAttribute="top" id="igg-4Q-PPY"/>
+                            <constraint firstItem="AtR-eW-jai" firstAttribute="top" secondItem="ztJ-w6-N5z" secondAttribute="bottom" constant="20" id="q4d-ku-Hz2"/>
+                            <constraint firstItem="ztJ-w6-N5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rzL-Fl-DN2"/>
+                            <constraint firstItem="AtR-eW-jai" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="sbj-Z7-YDN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bleTableView" destination="ztJ-w6-N5z" id="hKI-2L-c8O"/>
+                        <outlet property="infoLabel" destination="ZAH-B5-riT" id="iAF-Xo-Sfu"/>
                         <outlet property="loginBtn" destination="AtR-eW-jai" id="8s0-Jf-p69"/>
                         <outlet property="logoutBtn" destination="Q3W-ru-BeW" id="lU4-KI-Eoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>

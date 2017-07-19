@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AlexaVoiceClient.h"
 #import "Settings.h"
+#import "BleTool.h"
 @interface AlexaViewController ()<AVAudioPlayerDelegate, AVAudioRecorderDelegate>
 {
     AVAudioSession *audioSession;
@@ -31,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startBleNotification:) name:NOTIFICATION_START object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startBleNotification:) name:NOTIFICATION_STOP object:nil];
+    
     audioSession = [AVAudioSession sharedInstance];
     isRecording = NO;
     avsClient = [[AlexaVoiceClient alloc] init];
@@ -63,6 +67,7 @@
         dispatch_sync(dispatch_get_main_queue(), ^{
             weekSelf.progress.hidden = YES;
             weekSelf.voiceViewImg.hidden = NO;
+            weekSelf.infoLabel.text = @"response is empty";
         });
         if (directiveData == nil){
             return;
@@ -88,7 +93,7 @@
                     weekSelf.infoLabel.text = @"Alexa is speaking";
                 });
                 [avsClient sendEventNamespace:@"SpeechSynthesizer" Name:@"SpeechStarted" Token:speakToken];
-                [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
+//                [audioSession setCategory:AVAudioSessionCategoryRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
                 audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:nil];
                 audioPlayer.delegate = self;
                 [audioPlayer prepareToPlay];
@@ -130,18 +135,27 @@
 }
 - (IBAction)downchannelAction:(id)sender {
 }
+
+- (void) startBleNotification: (NSNotification *)notification{
+    [self talk2Action:nil];
+}
 - (IBAction)talk2Action:(id)sender {
     if (isRecording){
         [audioRecorder stop];
         isRecording = NO;
+        [audioSession setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
         NSLog(@"AudioURL = %@", audioRecorder.url.absoluteString);
         [avsClient postRecordingWithAudioData:[NSData dataWithContentsOfURL:audioRecorder.url]];
         timer.fireDate = [NSDate distantFuture];
+        self.voiceViewImg.hidden = YES;
+        [self.progress setHidden:NO];
+        self.infoLabel.text = @"Alexa is Uploading";
     }else{
-        
+        [audioSession setCategory:AVAudioSessionCategoryRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
         [audioRecorder prepareToRecord];
         [audioRecorder record];
         isRecording = YES;
+        self.infoLabel.text = @"Alexa is Listening";
         if (timer){
             timer.fireDate = [NSDate distantPast];
         }else{
@@ -157,7 +171,7 @@
     NSURL *directory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
     NSURL *fileURL = [directory URLByAppendingPathComponent:[Settings TEMP_FILE_NAME]];
     audioRecorder = [[AVAudioRecorder alloc] initWithURL:fileURL settings:[Settings RECORDING_SETTING] error:nil];
-    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
+    [audioSession setCategory:AVAudioSessionCategoryRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
     audioRecorder.meteringEnabled = YES;
     audioRecorder.delegate = self;
 }
@@ -179,8 +193,7 @@
         lowCount++;
         if (lowCount > 20){
             lowCount = 0;
-            self.voiceViewImg.hidden = YES;
-            [self.progress setHidden:NO];
+            
             [self talk2Action:nil];
             
         }
@@ -220,5 +233,9 @@
     
 }
 
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    self.infoLabel.text = @"Alexa is Ready";
+//    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionAllowBluetoothA2DP |AVAudioSessionCategoryOptionAllowAirPlay error:nil];
+}
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6918971F0C787400150FBB /* BleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6918961F0C787400150FBB /* BleTool.m */; };
 		B94737651EEF8A5E00DF006A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B94737641EEF8A5E00DF006A /* main.m */; };
 		B94737681EEF8A5E00DF006A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B94737671EEF8A5E00DF006A /* AppDelegate.m */; };
 		B947376B1EEF8A5E00DF006A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B947376A1EEF8A5E00DF006A /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6918951F0C787400150FBB /* BleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleTool.h; sourceTree = "<group>"; };
+		3E6918961F0C787400150FBB /* BleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleTool.m; sourceTree = "<group>"; };
 		B94737601EEF8A5E00DF006A /* AlexaTest_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlexaTest_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94737641EEF8A5E00DF006A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B94737661EEF8A5E00DF006A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 		B94737621EEF8A5E00DF006A /* AlexaTest_OC */ = {
 			isa = PBXGroup;
 			children = (
+				3E6918951F0C787400150FBB /* BleTool.h */,
+				3E6918961F0C787400150FBB /* BleTool.m */,
 				B9673D871EF376D700DB333B /* category */,
 				B94737881EEF8B3C00DF006A /* Frameworks */,
 				B94737661EEF8A5E00DF006A /* AppDelegate.h */,
@@ -205,6 +210,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8DD5ARBQ9E;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -254,6 +264,7 @@
 				B9673D8A1EF3772F00DB333B /* NSData+FirstRange.m in Sources */,
 				B94737681EEF8A5E00DF006A /* AppDelegate.m in Sources */,
 				B94737651EEF8A5E00DF006A /* main.m in Sources */,
+				3E6918971F0C787400150FBB /* BleTool.m in Sources */,
 				B94737961EEFB91C00DF006A /* AmazonToken.m in Sources */,
 				B947378F1EEF8DED00DF006A /* AmazonProxy.m in Sources */,
 			);
@@ -383,6 +394,7 @@
 					"$(PROJECT_DIR)/AlexaTest_OC/Frameworks",
 				);
 				INFOPLIST_FILE = AlexaTest_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,6 +415,7 @@
 					"$(PROJECT_DIR)/AlexaTest_OC/Frameworks",
 				);
 				INFOPLIST_FILE = AlexaTest_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

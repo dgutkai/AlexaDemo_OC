@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[BleTool centralManager:didDiscoverPeripheral:advertisementData:RSSI:]:BleTool.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "peripheral.identifier.UUIDString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
